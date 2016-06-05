@@ -18,6 +18,7 @@ export interface Check {
 */
 @Injectable()
 export class Database {
+  static CHECKS: string = 'checks';
   static VALUE: string = 'value';
   
   data: any = null;
@@ -27,7 +28,7 @@ export class Database {
   }
   
   loadChecks(ref: string): Promise<any[]> {
-    return this.data.ref(ref).once(Database.VALUE).then((snapshot: any) => {
+    return this.data.ref(ref + Database.CHECKS).once(Database.VALUE).then((snapshot: any) => {
       var snap: {[key: string]: Check} = snapshot.val();
       if (!(snap)) {
         return [];

@@ -1,6 +1,6 @@
 import {App, Platform} from 'ionic-angular';
 import {StatusBar} from 'ionic-native';
-import {HomePagePage} from './pages/home-page/home-page';
+import {RentersWalkthroughInspectionFormPage} from './pages/renters-walkthrough-inspection-form/renters-walkthrough-inspection-form';
 
 
 @App({
@@ -8,7 +8,7 @@ import {HomePagePage} from './pages/home-page/home-page';
   config: {} // http://ionicframework.com/docs/v2/api/config/Config/
 })
 export class MyApp {
-  rootPage: any = HomePagePage;
+  rootPage: any = RentersWalkthroughInspectionFormPage;
 
   constructor(platform: Platform) {
     platform.ready().then(() => {
