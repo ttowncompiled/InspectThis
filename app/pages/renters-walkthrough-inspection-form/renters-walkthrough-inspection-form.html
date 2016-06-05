@@ -10,17 +10,17 @@
 
 <ion-content padding class="renters-walkthrough-inspection-form">
   
-  <ion-card *ngIf="checks.length > 0">
+  <ion-card id="card" *ngIf="activeCheck" (swipe)="onSwipe($event)">
     
     <img src="polygon.jpg">
     
     <ion-card-content>
-      <ion-card-title>{{checks[0].title}}</ion-card-title>
-      <p>{{checks[0].description}}</p>
+      <ion-card-title>{{activeCheck.title}}</ion-card-title>
+      <p>{{activeCheck.description}}</p>
       <ion-list>
         <ion-item>Yes - swipe right</ion-item>
         <ion-item>No - swipe left</ion-item>
-        <ion-item><button danger round block>N/A</button></ion-item>
+        <ion-item><button danger round block (click)="onClick()">N/A</button></ion-item>
       </ion-list>
     </ion-card-content>
     
